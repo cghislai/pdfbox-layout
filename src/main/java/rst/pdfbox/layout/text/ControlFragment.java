@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.io.IOException;
 
 import org.apache.pdfbox.pdmodel.font.PDType1Font;
+import org.apache.pdfbox.pdmodel.font.Standard14Fonts;
 
 /**
  * A control fragment has no drawable representation but is meant to control the
@@ -13,7 +14,7 @@ import org.apache.pdfbox.pdmodel.font.PDType1Font;
 public class ControlFragment implements TextFragment {
 
     protected final static FontDescriptor DEFAULT_FONT_DESCRIPTOR = new FontDescriptor(
-	    PDType1Font.HELVETICA, 11);
+            new PDType1Font(Standard14Fonts.FontName.HELVETICA), 11);
 
     private String name;
     private String text;

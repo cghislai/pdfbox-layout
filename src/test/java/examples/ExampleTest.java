@@ -1,6 +1,10 @@
 package examples;
 
 import org.apache.pdfbox.pdmodel.PDDocument;
+import org.apache.pdfbox.Loader;
+import org.apache.pdfbox.io.RandomAccessReadBufferedFile;
+import org.apache.pdfbox.io.RandomAccessReadBuffer;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -115,6 +119,7 @@ public class ExampleTest {
   }
 
   public void checkExample(final String example) throws Exception {
+    System.out.println("example: " + example);
     Class<?> exampleClass = Class.forName(example);
     Method mainMethod = exampleClass.getDeclaredMethod("main",
             String[].class);
@@ -140,8 +145,8 @@ public class ExampleTest {
   protected static void comparePdfs(final File newPdf, InputStream toCompareTo)
           throws IOException, AssertionError {
 
-    try (PDDocument currentDoc = PDDocument.load(newPdf);
-         PDDocument oldDoc = PDDocument.load(toCompareTo)) {
+    try (PDDocument currentDoc = Loader.loadPDF(new RandomAccessReadBufferedFile(newPdf));
+         PDDocument oldDoc = Loader.loadPDF(new RandomAccessReadBuffer(toCompareTo))) {
 
       if (currentDoc.getNumberOfPages() != oldDoc.getNumberOfPages()) {
         throw new AssertionError(String.format(

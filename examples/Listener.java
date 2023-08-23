@@ -3,6 +3,7 @@ import java.io.IOException;
 import java.io.OutputStream;
 
 import org.apache.pdfbox.pdmodel.font.PDType1Font;
+import org.apache.pdfbox.pdmodel.font.Standard14Fonts;
 
 import rst.pdfbox.layout.elements.Document;
 import rst.pdfbox.layout.elements.Paragraph;
@@ -48,15 +49,12 @@ public class Listener {
 	    @Override
 	    public void afterPage(RenderContext renderContext)
 		    throws IOException {
-		String content = String.format("Page %s",
-			renderContext.getPageIndex() + 1);
-		TextFlow text = TextFlowUtil.createTextFlow(content, 11,
-			PDType1Font.TIMES_ROMAN);
-		float offset = renderContext.getPageFormat().getMarginLeft()
-			+ TextSequenceUtil.getOffset(text,
-				renderContext.getWidth(), Alignment.Right);
-		text.drawText(renderContext.getContentStream(), new Position(
-			offset, 30), Alignment.Right, null);
+			String content = String.format("Page %s", renderContext.getPageIndex() + 1);
+			TextFlow text = TextFlowUtil.createTextFlow(content, 11,
+														FontHelper.getFont(Standard14Fonts.FontName.TIMES_ROMAN));
+			float offset = renderContext.getPageFormat().getMarginLeft() +
+				TextSequenceUtil.getOffset(text, renderContext.getWidth(), Alignment.Right);
+			text.drawText(renderContext.getContentStream(), new Position(offset, 30), Alignment.Right, null);
 	    }
 	});
 

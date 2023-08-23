@@ -3,6 +3,7 @@ import java.io.FileOutputStream;
 import java.io.OutputStream;
 
 import org.apache.pdfbox.pdmodel.font.PDType1Font;
+import org.apache.pdfbox.pdmodel.font.Standard14Fonts;
 
 import rst.pdfbox.layout.elements.Document;
 import rst.pdfbox.layout.elements.ImageElement;
@@ -34,14 +35,13 @@ public class Letter {
 	document.add(new VerticalSpacer(100));
 
 	Paragraph paragraph = new Paragraph();
-	paragraph.addText("Blubberhausen, 01.04.2016", 11,
-		PDType1Font.HELVETICA);
+	paragraph.addText("Blubberhausen, 01.04.2016", 11, FontHelper.getFont(Standard14Fonts.FontName.HELVETICA));
 	document.add(paragraph, new VerticalLayoutHint(Alignment.Right, 0, 0,
 		0, 0, true));
 
 	paragraph = new Paragraph();
 	String address = "Ralf Stuckert\nAm Hollergraben 24\n67346 Blubberhausen";
-	paragraph.addText(address, 11, PDType1Font.HELVETICA);
+	paragraph.addText(address, 11, FontHelper.getFont(Standard14Fonts.FontName.HELVETICA));
 	document.add(paragraph);
 
 	paragraph = new Paragraph();

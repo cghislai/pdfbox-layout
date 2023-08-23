@@ -1,7 +1,7 @@
 import org.apache.tools.ant.filters.ReplaceTokens
 
 dependencies {
-  compile("org.apache.pdfbox:pdfbox:2.0.4")
+  compile("org.apache.pdfbox:pdfbox:3.0.0")
   testCompile("junit:junit:4.12")
 }
   

@@ -166,7 +166,7 @@ public class TextLine implements TextSequence {
 	    Alignment alignment, float availableLineWidth,
 	    DrawListener drawListener) throws IOException {
 	contentStream.saveGraphicsState();
-	contentStream.beginText();
+    contentStream.beginText();
 
 	float x = upperLeft.getX();
 	float y = upperLeft.getY() - getAscent(); // the baseline
@@ -200,9 +200,12 @@ public class TextLine implements TextSequence {
 	    if (moveBaseline || gap > 0) {
 		float baselineDelta = lastBaselineOffset - styledText.getBaselineOffset();
 		lastBaselineOffset = styledText.getBaselineOffset();
+        contentStream.endText();
 		CompatibilityHelper.moveTextPosition(contentStream, gap, baselineDelta);
+        contentStream.beginText();
 		x += gap;
 	    }
+
 	    if (styledText.getText().length() > 0) {
 		CompatibilityHelper.showText(contentStream,
 			styledText.getText());

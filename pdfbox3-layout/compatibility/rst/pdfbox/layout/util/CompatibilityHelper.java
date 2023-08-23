@@ -106,9 +106,8 @@ public class CompatibilityHelper {
     public static PDPageContentStream createAppendablePDPageContentStream(
 	    final PDDocument pdDocument, final PDPage page) throws IOException {
 	// stay compatible with 2.0.0-RC3
-	return new PDPageContentStream(pdDocument, page, true, true);
-	// return new PDPageContentStream(pdDocument, page, AppendMode.APPEND,
-	// true);
+	// return new PDPageContentStream(pdDocument, page, true, true);
+	return new PDPageContentStream(pdDocument, page, PDPageContentStream.AppendMode.APPEND, true);
     }
 
     public static void drawImage(final BufferedImage image,

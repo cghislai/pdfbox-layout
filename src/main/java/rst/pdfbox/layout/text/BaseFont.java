@@ -1,6 +1,7 @@
 package rst.pdfbox.layout.text;
 
 import org.apache.pdfbox.pdmodel.font.PDFont;
+import org.apache.pdfbox.pdmodel.font.Standard14Fonts;
 import org.apache.pdfbox.pdmodel.font.PDType1Font;
 
 /**
@@ -14,12 +15,22 @@ import org.apache.pdfbox.pdmodel.font.PDType1Font;
  */
 public enum BaseFont {
 
-    Times(PDType1Font.TIMES_ROMAN, PDType1Font.TIMES_BOLD,
-	    PDType1Font.TIMES_ITALIC, PDType1Font.TIMES_BOLD_ITALIC), //
-    Courier(PDType1Font.COURIER, PDType1Font.COURIER_BOLD,
-	    PDType1Font.COURIER_OBLIQUE, PDType1Font.COURIER_BOLD_OBLIQUE), //
-    Helvetica(PDType1Font.HELVETICA, PDType1Font.HELVETICA_BOLD,
-	    PDType1Font.HELVETICA_OBLIQUE, PDType1Font.HELVETICA_BOLD_OBLIQUE);
+    Times(new PDType1Font(Standard14Fonts.FontName.TIMES_ROMAN),
+            new PDType1Font(Standard14Fonts.FontName.TIMES_BOLD),
+            new PDType1Font(Standard14Fonts.FontName.TIMES_ITALIC),
+            new PDType1Font(Standard14Fonts.FontName.TIMES_BOLD_ITALIC)
+    ), //
+    Courier(new PDType1Font(Standard14Fonts.FontName.COURIER),
+            new PDType1Font(Standard14Fonts.FontName.COURIER_BOLD),
+            new PDType1Font(Standard14Fonts.FontName.COURIER_OBLIQUE),
+            new PDType1Font(Standard14Fonts.FontName.COURIER_BOLD_OBLIQUE)
+    ), //
+
+    Helvetica(new PDType1Font(Standard14Fonts.FontName.HELVETICA),
+            new PDType1Font(Standard14Fonts.FontName.HELVETICA_BOLD),
+            new PDType1Font(Standard14Fonts.FontName.HELVETICA_OBLIQUE),
+            new PDType1Font(Standard14Fonts.FontName.HELVETICA_BOLD_OBLIQUE)
+    );
 
     private PDFont plainFont;
     private PDFont boldFont;

@@ -25,7 +25,7 @@ subprojects {
     apply plugin: 'maven-publish'
 
     group = 'com.github.ralfstuckert.pdfbox-layout'
-    version = '1.0.1'
+    version = '2.0.0'
 
     repositories {
         mavenCentral()
@@ -70,7 +70,7 @@ subprojects {
 
     artifacts {
         archives sourcesJar
-        archives javadocJar
+        //archives javadocJar
         archives examplesJar
     }
 
@@ -102,7 +102,7 @@ subprojects {
         def examples = fileTree("examples").exclude('**/*.java')
         examples.each { example ->
             def mainClassName = getClassName(example)
-            if (mainClassName) {
+            if (mainClassName && mainClassName != "FontHelper") {
                 javaexec {
                     main = mainClassName
                     classpath = sourceSets.main.compileClasspath

@@ -92,8 +92,9 @@ public class UnderlineAnnotationProcessor implements AnnotationProcessor {
 	    if (stroke != null) {
 		stroke.applyTo(contentStream);
 	    }
-	    contentStream.drawLine(start.getX(), start.getY(), end.getX(),
-		    end.getY());
+		contentStream.moveTo(start.getX(), start.getY());
+		contentStream.lineTo(end.getX(), end.getY());
+		contentStream.stroke();
 	}
 
     }

@@ -105,8 +105,9 @@ public class CompatibilityHelper {
 
     public static PDPageContentStream createAppendablePDPageContentStream(
 	    final PDDocument pdDocument, final PDPage page) throws IOException {
-	return new PDPageContentStream(pdDocument, page, true, true);
-    }
+		//return new PDPageContentStream(pdDocument, page, true, true);
+		return new PDPageContentStream(pdDocument, page, AppendMode.APPEND,  true);
+	}
 
     public static void drawImage(final BufferedImage image,
 	    final PDDocument document, final PDPageContentStream contentStream,

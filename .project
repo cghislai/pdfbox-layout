@@ -25,11 +25,7 @@
 				<arguments>
 					<matcher>
 						<id>org.eclipse.ui.ide.multiFilter</id>
-						<arguments>1.0-projectRelativePath-equals-true-false-pdfbox1-layout</arguments>
-					</matcher>
-					<matcher>
-						<id>org.eclipse.ui.ide.multiFilter</id>
-						<arguments>1.0-projectRelativePath-equals-true-false-pdfbox2-layout</arguments>
+						<arguments>1.0-projectRelativePath-equals-true-false-pdfbox3-layout</arguments>
 					</matcher>
 				</arguments>
 			</matcher>

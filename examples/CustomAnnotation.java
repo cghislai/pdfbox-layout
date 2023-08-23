@@ -10,7 +10,9 @@ import java.util.regex.Pattern;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.common.PDRectangle;
 import org.apache.pdfbox.pdmodel.font.PDType1Font;
+import org.apache.pdfbox.pdmodel.font.Standard14Fonts;
 import org.apache.pdfbox.pdmodel.interactive.annotation.PDAnnotationTextMarkup;
+import org.apache.pdfbox.pdmodel.interactive.annotation.PDAnnotationHighlight;
 
 import rst.pdfbox.layout.elements.Document;
 import rst.pdfbox.layout.elements.PageFormat;
@@ -65,8 +67,7 @@ public class CustomAnnotation {
 	    for (HighlightAnnotation highlightAnnotation : HighlightAnnotations) {
 
 		// use PDF text markup to implement the highlight
-		PDAnnotationTextMarkup markup = new PDAnnotationTextMarkup(
-			PDAnnotationTextMarkup.SUB_TYPE_HIGHLIGHT);
+			PDAnnotationTextMarkup markup = new PDAnnotationHighlight();
 
 		// use the bounding box of the drawn object to position the
 		// highlight
@@ -190,19 +191,19 @@ public class CustomAnnotation {
 		.margins(40, 60, 40, 60).portrait().build());
 
 	Paragraph paragraph = new Paragraph();
-	paragraph.addText("Hello there, here is ", 10, PDType1Font.HELVETICA);
+	paragraph.addText("Hello there, here is ", 10, FontHelper.getFont(Standard14Fonts.FontName.HELVETICA));
 
 	// now add some annotated text using our custom highlight annotation
 	HighlightAnnotation annotation = new HighlightAnnotation(Color.green);
 	AnnotatedStyledText highlightedText = new AnnotatedStyledText(
-		"highlighted text", 10, PDType1Font.HELVETICA, Color.black, 0f,
+		"highlighted text", 10, FontHelper.getFont(Standard14Fonts.FontName.HELVETICA), Color.black, 0f,
 		Collections.singleton(annotation));
 	paragraph.add(highlightedText);
 
 	paragraph
 		.addText(
 			". Do whatever you want here...strike, squiggle, whatsoever\n\n",
-			10, PDType1Font.HELVETICA);
+			10, FontHelper.getFont(Standard14Fonts.FontName.HELVETICA));
 	paragraph.setMaxWidth(150);
 	document.add(paragraph);
 
