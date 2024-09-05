@@ -1,4 +1,4 @@
 /target/
 /.gradle/
-/build/
+**/build/
 pdfbox-layout/.gradle/

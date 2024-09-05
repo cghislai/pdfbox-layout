@@ -1,1 +1,3 @@
-include 'pdfbox3-layout'
+rootProject.name = 'pdfbox-layout-root'
+include 'pdfbox-layout'
+

@@ -23,6 +23,7 @@ artifactId | pdfbox version
 ---------- | -------------
 pdfbox**1**-layout | pdfbox **1**.8.x
 pdfbox**2**-layout | pdfbox **2**.x
+pdfbox-layout **3**.x | pdfbox **2**.x
 
 
 ### Get it:

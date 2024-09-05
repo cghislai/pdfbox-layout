@@ -32,5 +32,5 @@ jobs:
       with:
         name: test-diffs
         path: |
-          pdfbox1-layout/*.diff.png
-          pdfbox2-layout/*.diff.png
+          pdfbox-layout/test-outputs/examples/*.diff.png
+        
