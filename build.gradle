@@ -2,7 +2,7 @@ plugins {
     id 'java'
 }
 
-group = 'com.github.ralfstuckert.pdfbox-layout'
+group = 'com.github.cghislai.pdfbox-layout'
 version = '3.0.0-rc.0'
 
 repositories {
