@@ -11,6 +11,7 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    environment: publish  # Specify the environment
     permissions:
       contents: read
       packages: write
@@ -33,5 +34,5 @@ jobs:
     - name: Publish to GitHub Packages
       run: gradle publish
       env:
-        USERNAME: ${{ USERNAME }}
-        TOKEN: ${{ TOKEN }}
+        USERNAME: ${{ vars.USERNAME }}
+        TOKEN: ${{ secrets.TOKEN }}
