@@ -23,7 +23,7 @@ artifactId | pdfbox version
 ---------- | -------------
 pdfbox**1**-layout | pdfbox **1**.8.x
 pdfbox**2**-layout | pdfbox **2**.x
-pdfbox-layout **3**.x | pdfbox **2**.x
+pdfbox-layout **3**.x | pdfbox **3**.x
 
 
 ### Get it:
@@ -41,9 +41,9 @@ As of 0.2.0 pdfbox-layout is available from [jitpack.io](https://jitpack.io/#ral
     </repositories>
     ...
     <dependency>
-        <groupId>com.github.ralfstuckert.pdfbox-layout</groupId>
+        <groupId>com.github.cghislai.pdfbox-layout</groupId>
         <artifactId>pdfbox2-layout</artifactId>
-        <version>1.0.1</version>
+        <version>3.0.0-rc.0</version>
     </dependency>
 ```
 
@@ -55,11 +55,15 @@ As of 0.2.0 pdfbox-layout is available from [jitpack.io](https://jitpack.io/#ral
         maven { url "https://jitpack.io" }
    }
    dependencies {
-         compile 'com.github.ralfstuckert.pdfbox-layout:pdfbox2-layout:1.0.1'
+         compile 'com.github.cghislai.pdfbox-layout:pdfbox2-layout:3.0.0-rc.0'
    }
 ```
 
-#### Download:
+#### Artifacts
+
+See github
+
+#### Previous version downloads
 
  artifact | pdfbox**1**-layout | pdfbox**2**-layout
 :--- | :--- | :---

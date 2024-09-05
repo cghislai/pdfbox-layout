@@ -248,6 +248,9 @@ public class ExampleTest {
     private static final double MAX_VECTOR_LENGTH = Math.sqrt(3.0 * 255.0 * 255.0);
 
     private static void deleteRecursive(Path path) throws IOException {
+        if (!Files.exists(path)) {
+            return;
+        }
         Files.walkFileTree(path, new SimpleFileVisitor<Path>() {
             @Override
             public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
